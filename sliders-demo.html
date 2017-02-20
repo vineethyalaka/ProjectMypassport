@@ -1,0 +1,73 @@
+<!--
+
+  Slider Demonstration
+
+  Rules:
+
+  Images must be in the file format of: jpg, png, jp4. 
+
+  My have a WIDTH of 600px and a height of 400px;
+
+-->
+
+
+<style>
+#slideshow { 
+    margin: 50px auto; 
+    position: relative; 
+    width: 600px; 
+    height: 400px; 
+    padding: 10px; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+}
+
+#slideshow > div { 
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    right: 10px; 
+    bottom: 10px; 
+}
+
+#slideshow img{
+  width: 600px;
+  height: 400px;
+
+}
+}</style>
+
+
+<div id="slideshow">
+    <div>
+      <img src="http://media.northjersey.com/images/0831F_NJIT3.jpg">
+      <p>Caption: School Of Architeture</p>
+    </div>
+
+    <div>
+      <img src="http://0.tqn.com/d/collegeapps/1/0/1/F/-/-/njit-Andrew-Maiman-flickr.jpg">
+    </div>
+
+    <div>
+      <img src="http://design.njit.edu/uicomponents/images/weston-tabbed.jpg">
+    </div>
+
+
+</div>
+   <h2 align="center">Alternative Spring Break '13</h2>
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+
+<script type="text/javascript">
+$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  3000);
+</script>
